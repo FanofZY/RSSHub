@@ -11,15 +11,7 @@ on:
       - 'Dockerfile'
   workflow_dispatch: {}
 
-jobs:
-  check-env:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    outputs:
-      check-docker: ${{ steps.check-docker.outputs.defined }}
-    steps:
-      - id: check-docker
-        run: echo "defined=true" >> $GITHUB_OUTPUT
+
 
   release:
     runs-on: ubuntu-latest
